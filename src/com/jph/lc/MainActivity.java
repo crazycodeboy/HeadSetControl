@@ -17,6 +17,7 @@ public class MainActivity extends Activity {
 		txt = (TextView) findViewById(R.id.text);
 		HeadSetUtil.getInstance().setOnHeadSetListener(headSetListener);
 		HeadSetUtil.getInstance().open(this);
+		
 	}
 	@Override
 	protected void onDestroy() {
@@ -27,10 +28,17 @@ public class MainActivity extends Activity {
 		@Override
 		public void onDoubleClick() {
 			txt.setText("双击");
+			Log.i("ksdinf", "双击");
 		}
 		@Override
 		public void onClick() {
 			txt.setText("单击,1秒延迟");
+			Log.i("ksdinf", "单击,1秒延迟");
+		}
+		@Override
+		public void onThreeClick() {
+			txt.setText("三连击");
+			Log.i("ksdinf", "三连击");
 		}
 	};
 }
