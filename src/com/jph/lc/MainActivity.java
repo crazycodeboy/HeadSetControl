@@ -21,7 +21,6 @@ public class MainActivity extends Activity {
 		txt = (TextView) findViewById(R.id.text);
 		HeadSetUtil.getInstance().setOnHeadSetListener(headSetListener);
 		HeadSetUtil.getInstance().open(this);
-		
 	}
 	@Override
 	protected void onDestroy() {

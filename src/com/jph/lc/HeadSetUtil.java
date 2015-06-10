@@ -23,7 +23,6 @@ public class HeadSetUtil {
 
 	/**
 	 * 设置耳机单击双击监听接口 必须在open前设置此接口，否则设置无效
-	 * 
 	 * @param headSetListener
 	 */
 	public void setOnHeadSetListener(OnHeadSetListener headSetListener) {
