@@ -6,13 +6,17 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.jph.lc.HeadSetUtil.OnHeadSetListener;
+/**
+ * 耳机线控实例，蓝牙耳机按钮监听（仿酷狗线控效果）
+ * @author JPH
+ * @Date2015-6-10 上午9:49:02
+ */
 public class MainActivity extends Activity {
 
 	TextView txt = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Log.i("ksdinf", "onCreate");
 		setContentView(R.layout.activity_main);
 		txt = (TextView) findViewById(R.id.text);
 		HeadSetUtil.getInstance().setOnHeadSetListener(headSetListener);
@@ -32,8 +36,8 @@ public class MainActivity extends Activity {
 		}
 		@Override
 		public void onClick() {
-			txt.setText("单击,1秒延迟");
-			Log.i("ksdinf", "单击,1秒延迟");
+			txt.setText("单击");
+			Log.i("ksdinf", "单击");
 		}
 		@Override
 		public void onThreeClick() {

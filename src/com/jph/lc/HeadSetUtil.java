@@ -5,7 +5,7 @@ import android.content.Context;
 import android.media.AudioManager;
 import android.util.Log;
 /**
- * 耳机线控管理助手类 单例
+ * 耳机线控管理工具类 单例
  * @author JPH
  * @date 2015-6-9 下午4:03:45
  */
@@ -35,6 +35,9 @@ public class HeadSetUtil {
 	 * @param context
 	 */
 	public void open(Context context) {
+		if(headSetListener==null){
+			throw new IllegalStateException("please set headSetListener");
+		}
 		AudioManager audioManager = (AudioManager) context
 				.getSystemService(Context.AUDIO_SERVICE);
 		ComponentName name = new ComponentName(context.getPackageName(),
@@ -43,7 +46,7 @@ public class HeadSetUtil {
 		Log.i("ksdinf", "open");
 	}
 	/**
-	 * 关闭耳机线控监听	 * 
+	 * 关闭耳机线控监听	
 	 * @param context
 	 */
 	public void close(Context context) {
