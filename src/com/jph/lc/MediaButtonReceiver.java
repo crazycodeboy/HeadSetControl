@@ -82,11 +82,11 @@ public class MediaButtonReceiver extends BroadcastReceiver{
 		@Override
 		public void handleMessage(Message msg) {
 			super.handleMessage(msg);
-			if(msg.what==1){
+			if(msg.what==1){//单击
 				headSetListener.onClick();
-			}else if (msg.what==2) {
+			}else if (msg.what==2) {//双击
 				headSetListener.onDoubleClick();
-			}else if (msg.what==3) {
+			}else if (msg.what==3) {//三连击
 				headSetListener.onThreeClick();
 			}
 		}
