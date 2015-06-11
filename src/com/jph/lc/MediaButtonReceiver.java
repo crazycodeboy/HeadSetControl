@@ -57,7 +57,7 @@ public class MediaButtonReceiver extends BroadcastReceiver{
 	        abortBroadcast();//终止广播(不让别的程序收到此广播，免受干扰)  
 	}
 	/**
-	 * 定时器，用于延迟1秒，内若无操作则为单击
+	 * 定时器，用于延迟1秒，判断是否会发生双击和三连击
 	 */
 	class MTask extends TimerTask{
 			@Override
