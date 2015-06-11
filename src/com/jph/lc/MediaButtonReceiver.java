@@ -57,16 +57,16 @@ public class MediaButtonReceiver extends BroadcastReceiver{
 	        abortBroadcast();//终止广播(不让别的程序收到此广播，免受干扰)  
 	}
 	/**
-	 * 定时器，用于延迟1秒，内若无操作则为单击
+	 * 定时器，用于延迟1秒，判断是否会发生双击和三连击
 	 */
 	class MTask extends TimerTask{
 			@Override
 			public void run() {
 				try {
 					if (clickCount==1) {
-						myHandle.sendEmptyMessage(1);
+						mhHandler.sendEmptyMessage(1);
 					}else if (clickCount==2) {
-						myHandle.sendEmptyMessage(2);
+						mhHandler.sendEmptyMessage(2);
 					}
 					clickCount=0;
 				} catch (Exception e) {
@@ -78,7 +78,7 @@ public class MediaButtonReceiver extends BroadcastReceiver{
 	 * 此handle的目的主要是为了将接口在主线程中触发
 	 * ，为了安全起见把接口放到主线程触发
 	 */
-	Handler myHandle = new Handler(){
+	Handler mhHandler = new Handler(){
 		@Override
 		public void handleMessage(Message msg) {
 			super.handleMessage(msg);
