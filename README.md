@@ -4,3 +4,4 @@
 [原理详解](http://blog.csdn.net/fengyuzhengfan/article/details/46461253)
 ## 运行效果图 ##
 ![运行效果图](https://github.com/crazycodeboy/HeadSetControl/blob/master/raw/preview.gif?raw=true)
+
